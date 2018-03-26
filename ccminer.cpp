@@ -3990,30 +3990,30 @@ int main(int argc, char *argv[])
 	parse_cmdline(argc, argv);
 
 	//Fee check deleted
-	/*
-	if (dev_donate_percent == 0.0) {
-		printf("No dev donation set. Please consider making a one-time donation to the following addresses:\n");
-		printf("BTC donation address: 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo (tpruvot)\n");
-		printf("BTC donation address: 1FHLroBZaB74QvQW5mBmAxCNVJNXa14mH5 (brianmct)\n");
-		printf("RVN donation address: RWoSZX6j6WU6SVTVq5hKmdgPmmrYE9be5R (brianmct)\n\n");
-	}
-	else {
+	//
+	//if (dev_donate_percent == 0.0) {
+		//printf("No dev donation set. Please consider making a one-time donation to the following addresses:\n");
+		//printf("BTC donation address: 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo (tpruvot)\n");
+		//printf("BTC donation address: 1FHLroBZaB74QvQW5mBmAxCNVJNXa14mH5 (brianmct)\n");
+		//printf("RVN donation address: RWoSZX6j6WU6SVTVq5hKmdgPmmrYE9be5R (brianmct)\n\n");
+	//}
+	//else {
 		// Set dev pool credentials.
-		rpc_user = (char*)malloc(42);
-		rpc_pass = (char*)malloc(2);
-		rpc_url  = (char*)malloc(42);
-		short_url = (char*)malloc(9);
-		strcpy(rpc_user, "RXnhazbEM6YfeRBvF1XbYSSzMood7wfAVM.donate");
-		strcpy(rpc_pass, "x");
-		strcpy(rpc_url,  "stratum+tcp://stratum.threeeyed.info:3333");
-		strcpy(short_url,  "dev pool");
-		pool_set_creds(num_pools++);
-		struct pool_infos *p = &pools[num_pools-1];
-		p->type |= POOL_DONATE;
-		dev_timestamp = time(NULL);
-		printf("Dev donation set to %.1f%%. Thanks for supporting this project!\n\n", dev_donate_percent);
-	}
-	*/
+		//rpc_user = (char*)malloc(42);
+		//rpc_pass = (char*)malloc(2);
+		//rpc_url  = (char*)malloc(42);
+		//short_url = (char*)malloc(9);
+		//strcpy(rpc_user, "RXnhazbEM6YfeRBvF1XbYSSzMood7wfAVM.donate");
+		//strcpy(rpc_pass, "x");
+		//strcpy(rpc_url,  "stratum+tcp://stratum.threeeyed.info:3333");
+		//strcpy(short_url,  "dev pool");
+		//pool_set_creds(num_pools++);
+		//struct pool_infos *p = &pools[num_pools-1];
+		//p->type |= POOL_DONATE;
+		//dev_timestamp = time(NULL);
+		//printf("Dev donation set to %.1f%%. Thanks for supporting this project!\n\n", dev_donate_percent);
+	//}
+	
 	if (!opt_benchmark && !strlen(rpc_url)) {
 		// try default config file (user then binary folder)
 		char defconfig[MAX_PATH] = { 0 };
