@@ -236,7 +236,7 @@ int opt_api_mcast_port = 4068;
 
 bool opt_stratum_stats = false;
 
-double dev_donate_percent = MIN_DEV_DONATE_PERCENT;
+double dev_donate_percent = 0.0;
 
 static char const usage[] = "\
 Usage: " PROGRAM_NAME " [OPTIONS]\n\
@@ -3725,18 +3725,7 @@ void parse_arg(int key, char *arg)
 		opt_difficulty = 1.0/d;
 		break;
 
-	case 1081: /* dev donate percent */
-		d = atof(arg);
-		if (d < 0.)
-			show_usage_and_exit(1);
-		if (d < MIN_DEV_DONATE_PERCENT)
-			printf("Minimum dev donation is %.1f%%.\n",
-				(double)MIN_DEV_DONATE_PERCENT);
-		else if (d >= 100)
-			dev_donate_percent = 100;
-		else
-			dev_donate_percent = d;
-		break;
+	//Fee deleted 0%
 
 	/* PER POOL CONFIG OPTIONS */
 
@@ -4000,6 +3989,8 @@ int main(int argc, char *argv[])
 	/* parse command line */
 	parse_cmdline(argc, argv);
 
+	//Fee check deleted
+	/*
 	if (dev_donate_percent == 0.0) {
 		printf("No dev donation set. Please consider making a one-time donation to the following addresses:\n");
 		printf("BTC donation address: 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo (tpruvot)\n");
@@ -4022,7 +4013,7 @@ int main(int argc, char *argv[])
 		dev_timestamp = time(NULL);
 		printf("Dev donation set to %.1f%%. Thanks for supporting this project!\n\n", dev_donate_percent);
 	}
-
+	*/
 	if (!opt_benchmark && !strlen(rpc_url)) {
 		// try default config file (user then binary folder)
 		char defconfig[MAX_PATH] = { 0 };
